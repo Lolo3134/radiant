@@ -1,0 +1,93 @@
+@import "../../../Styles/variables";
+@import "../../../Styles/mixin";
+
+.slick-slider {
+  z-index: 3;
+  margin-bottom: 176px;
+
+  @media screen and (width <= 767px) {
+    height: 700px;
+    margin-bottom: 82px;
+  }
+}
+
+
+.prevArrow {
+  display: flex;
+  position: absolute;
+  top: -96px;
+  right: 182px;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer
+}
+
+.nextArrow {
+  display: flex;
+  position: absolute;
+  top: -96px;
+  right: 60px;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer
+}
+
+.slider_item {
+  padding: 10px;
+  border: 1px solid $line-color;
+  background: $background-primary;
+
+  img {
+    width: 100%;
+    max-width: 403px;
+    object-fit: cover;
+    margin-bottom: 10px;
+
+    @media screen and (width <= 767px) {
+      max-width: 250px;
+    }
+  }
+
+  &_description {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    
+    &_title {
+      @include font-primary(2.25rem, 64px);
+    }
+
+    &_price {
+      @include font-description(0.875rem);
+    }
+  }
+}
+
+.slick-initialized .slick-slide {
+  display: flex;
+  gap: 16px;
+}
+
+.slick-slide > div{
+  width: 423px!important;
+  
+  @media screen and (width <= 767px) {
+    width: 270px!important;
+  }
+}
+
+.slick-slide {
+  width: 439px!important;
+
+  @media screen and (width <= 767px) {
+    width: 280px!important;
+  }
+}

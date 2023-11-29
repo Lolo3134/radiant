@@ -1,0 +1,79 @@
+@import "../../../Styles/variables";
+@import "../../../Styles/mixin";
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 60px;
+  padding-top: 36px;
+
+  @media screen and (width <= 767px) {
+    margin: 0 17px;
+    padding-top: 20px;
+  }
+}
+
+.logo {
+  @include font-primary(3rem);
+
+  text-decoration: none;
+
+  @media screen and (width <= 767px) {
+    @include font-primary(2.25rem);
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+
+  @media screen and (width <= 767px) {
+    display: none;
+  }
+}
+
+.nav_link {
+  text-decoration: none;
+  white-space: nowrap;
+
+  @include font-description(1rem);
+}
+
+.menu_mobile {
+  display: none;
+
+  @media screen and (width <= 767px) {
+    display: block;
+    position: relative;
+  }
+
+  .menu_button {
+    background: none;
+    outline: none;
+    border: none;
+    position: relative;
+    @include font-description(1rem);
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav.active {
+    @media screen and (width <= 767px) {
+      display: flex;
+      background: $background-primary;
+      position: absolute;
+      right: 0;
+      width: 100px;
+      padding: 10px;
+      border: 1px solid $line-color;
+      border-right: none;
+      border-top: none;
+      z-index: 10;
+    }
+  }
+}
